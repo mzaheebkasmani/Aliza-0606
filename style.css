@@ -1,0 +1,332 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+:root{
+  --bg:#07050c;
+  --bg2:#12091d;
+  --pink:#ec4899;
+  --pinkSoft:#f9a8d4;
+  --purple:#8b5cf6;
+  --gold:#f4d58d;
+  --text:#f6f1e8;
+  --muted:#c9c2b8;
+}
+
+body{
+  background:linear-gradient(to bottom,var(--bg),var(--bg2));
+  color:var(--text);
+  font-family:'Manrope',sans-serif;
+  overflow-x:hidden;
+}
+
+.stars{
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:url(./A.jpg);
+  opacity:0.25;
+  animation:move 120s linear infinite;
+  z-index:-3;
+}
+
+.glow{
+  position:fixed;
+  border-radius:50%;
+  filter:blur(120px);
+  z-index:-2;
+}
+
+.glow1{
+  width:400px;
+  height:400px;
+  background:rgba(139,92,246,0.35);
+  top:-100px;
+  left:-100px;
+}
+
+.glow2{
+  width:350px;
+  height:350px;
+  background:rgba(236,72,153,0.25);
+  bottom:-100px;
+  right:-100px;
+}
+
+@keyframes move{
+  from{
+    transform:translateY(0);
+  }
+
+  to{
+    transform:translateY(-1000px);
+  }
+}
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+}
+
+.tag{
+  color:var(--gold);
+  letter-spacing:4px;
+  text-transform:uppercase;
+  font-size:12px;
+  margin-bottom:25px;
+}
+
+.hero h1{
+  font-family:'Fraunces',serif;
+  font-size:90px;
+  line-height:1;
+  font-weight:300;
+  margin-bottom:25px;
+}
+
+.hero h1 span{
+  display:block;
+
+  background:linear-gradient(
+    90deg,
+    var(--gold),
+    var(--pinkSoft),
+    var(--purple)
+  );
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.hero-text{
+  max-width:700px;
+  color:var(--muted);
+  line-height:1.9;
+  font-size:18px;
+  margin-bottom:35px;
+}
+
+button{
+  padding:16px 40px;
+  border-radius:50px;
+  border:1px solid rgba(255,255,255,0.15);
+  background:rgba(255,255,255,0.06);
+  color:white;
+  cursor:pointer;
+  transition:0.4s;
+  font-size:15px;
+  backdrop-filter:blur(10px);
+}
+
+button:hover{
+  transform:translateY(-5px);
+
+  background:rgba(236,72,153,0.2);
+
+  box-shadow:0 10px 30px rgba(236,72,153,0.2);
+}
+
+.message-box{
+  padding:120px 20px;
+  display:flex;
+  justify-content:center;
+}
+
+.card{
+  width:100%;
+  max-width:900px;
+
+  background:rgba(255,255,255,0.05);
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter:blur(20px);
+
+  border-radius:30px;
+
+  padding:60px;
+}
+
+.small-title{
+  color:var(--gold);
+
+  letter-spacing:3px;
+
+  text-transform:uppercase;
+
+  margin-bottom:20px;
+
+  font-size:12px;
+}
+
+.card h2{
+  font-family:'Fraunces',serif;
+
+  font-weight:300;
+
+  font-size:50px;
+
+  line-height:1.2;
+
+  margin-bottom:30px;
+}
+
+.card p{
+  color:var(--muted);
+
+  line-height:2;
+
+  margin-bottom:20px;
+
+  font-size:17px;
+}
+
+.last-line{
+  color:var(--pinkSoft)!important;
+
+  font-size:24px!important;
+
+  font-family:'Fraunces',serif;
+}
+
+.stats{
+  padding:120px 20px;
+
+  text-align:center;
+}
+
+.stats h2{
+  font-family:'Fraunces',serif;
+
+  font-size:60px;
+
+  font-weight:300;
+
+  margin-bottom:60px;
+}
+
+.grid{
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(230px,1fr));
+
+  gap:25px;
+
+  max-width:1100px;
+
+  margin:auto;
+}
+
+.box{
+  background:rgba(255,255,255,0.05);
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  border-radius:25px;
+
+  padding:50px 30px;
+
+  transition:0.4s;
+
+  backdrop-filter:blur(15px);
+}
+
+.box:hover{
+  transform:translateY(-10px);
+
+  border-color:rgba(244,213,141,0.4);
+}
+
+.box h1{
+  font-family:'Fraunces',serif;
+
+  font-size:55px;
+
+  color:var(--pinkSoft);
+
+  margin-bottom:15px;
+}
+
+.box p{
+  color:var(--muted);
+}
+
+.final{
+  min-height:80vh;
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:center;
+
+  align-items:center;
+
+  text-align:center;
+
+  padding:20px;
+}
+
+.final h2{
+  font-family:'Fraunces',serif;
+
+  font-size:70px;
+
+  font-weight:300;
+
+  margin-bottom:25px;
+}
+
+.final h2 span{
+  display:block;
+
+  background:linear-gradient(
+    90deg,
+    var(--gold),
+    var(--pinkSoft),
+    var(--purple)
+  );
+
+  -webkit-background-clip:text;
+
+  -webkit-text-fill-color:transparent;
+}
+
+.final p{
+  max-width:700px;
+
+  line-height:2;
+
+  color:var(--muted);
+
+  font-size:18px;
+}
+
+@media(max-width:768px){
+
+  .hero h1{
+    font-size:55px;
+  }
+
+  .card{
+    padding:35px;
+  }
+
+  .card h2{
+    font-size:35px;
+  }
+
+  .stats h2,
+  .final h2{
+    font-size:42px;
+  }
+
+}
