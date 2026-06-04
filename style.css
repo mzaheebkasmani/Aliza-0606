@@ -12,7 +12,7 @@ body{
   text-align:center;
 }
 
-/* BESTIE BACKGROUND (IMPORTANT) */
+/* BESTIE BACKGROUND */
 .bestiepic{
   position:fixed;
   inset:0;
@@ -39,6 +39,75 @@ body{
   bottom:-100px;right:-100px;
 }
 
+/* ==============================
+   INTRO — fixed & responsive
+   ============================== */
+.intro{
+  position:fixed;
+  inset:0;
+  background:#05030e;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+  overflow:hidden;
+}
+
+/* circle centered with % — works on all screens */
+.landing-circle{
+  position:absolute;
+  bottom:14%;
+  left:50%;
+  transform:translateX(-50%);
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  background:radial-gradient(circle,#ec4899,#8b5cf6,transparent);
+  box-shadow:0 0 40px rgba(236,72,153,0.6);
+}
+
+/* blob: left:50% centers it on every screen */
+.blob{
+  position:absolute;
+  left:50%;
+  top:0;
+  animation:fall 1.2s ease forwards;
+}
+
+/* fixed image size so it's not huge on mobile */
+.blob img{
+  width:90px;
+  height:auto;
+  display:block;
+}
+
+/* translateX(-50%) in every frame keeps blob centered during animation */
+@keyframes fall{
+  0%  { transform:translateX(-50%) translateY(-160px); }
+  70% { transform:translateX(-50%) translateY(72vh) scale(1.1); }
+  85% { transform:translateX(-50%) translateY(65vh) scale(0.9); }
+  100%{ transform:translateX(-50%) translateY(69vh); }
+}
+
+/* POOF centered above the circle */
+.poof{
+  position:absolute;
+  bottom:calc(14% + 90px);
+  left:50%;
+  transform:translateX(-50%);
+  white-space:nowrap;
+  font-size:26px;
+  opacity:0;
+  color:#f4d58d;
+  animation:poof 2s ease forwards;
+}
+
+@keyframes poof{
+  0%,68%{ opacity:0; transform:translateX(-50%) scale(1);   }
+  80%   { opacity:1; transform:translateX(-50%) scale(1.2); }
+  100%  { opacity:0; transform:translateX(-50%) scale(1.5); }
+}
+
 /* HERO */
 .hero{
   min-height:100vh;
@@ -51,7 +120,7 @@ body{
 
 .hero h1{
   font-family:'Fraunces',serif;
-  font-size:70px;
+  font-size:clamp(40px,8vw,70px);
   font-weight:300;
 }
 
@@ -67,6 +136,7 @@ body{
   color:#c9c2b8;
   margin:20px 0;
   line-height:1.8;
+  font-size:clamp(14px,2vw,16px);
 }
 
 /* BUTTON */
@@ -77,9 +147,10 @@ button{
   background:rgba(255,255,255,0.05);
   color:white;
   cursor:pointer;
+  font-family:'Manrope',sans-serif;
+  font-size:15px;
   transition:0.3s;
 }
-
 button:hover{
   transform:translateY(-5px);
   background:rgba(236,72,153,0.2);
@@ -102,7 +173,7 @@ button:hover{
 
 .card h2{
   font-family:'Fraunces',serif;
-  font-size:40px;
+  font-size:clamp(26px,4vw,40px);
   margin-bottom:20px;
 }
 
@@ -137,15 +208,8 @@ button:hover{
   background:rgba(255,255,255,0.05);
   transition:0.3s;
 }
-
-.box:hover{
-  transform:translateY(-10px);
-}
-
-.box h1{
-  font-size:40px;
-  color:#ec4899;
-}
+.box:hover{ transform:translateY(-10px); }
+.box h1{ font-size:40px; color:#ec4899; }
 
 /* FINAL */
 .final{
@@ -154,88 +218,108 @@ button:hover{
 
 .final h2{
   font-family:'Fraunces',serif;
-  font-size:50px;
+  font-size:clamp(30px,6vw,50px);
 }
+.final span{ color:#ec4899; }
 
-.final span{
-  color:#ec4899;
-}
-
-/* ===== INTRO ===== */
-.intro{
-  position:fixed;
-  inset:0;
-  background:#05030e;
-  display:flex;
+/* ==============================
+   SECRET NOTE — centered + responsive
+   ============================== */
+.secret{
+  padding:80px 20px;
+  display:flex;          /* this centers the lock box */
   justify-content:center;
   align-items:center;
-  z-index:9999;
-  overflow:hidden;
 }
-
-/* landing glow */
-.landing-circle{
-  position:absolute;
-  bottom:120px;
-  width:120px;
-  height:120px;
-  border-radius:50%;
-  background:radial-gradient(circle,#ec4899,#8b5cf6,transparent);
-  box-shadow:0 0 40px rgba(236,72,153,0.6);
-}
-
-/* blob */
-.blob{
-  position:absolute;
-  top:-100px;
-  font-size:60px;
-  animation:fall 1.2s ease forwards;
-}
-
-@keyframes fall{
-  0%{transform:translateY(-120px);}
-  70%{transform:translateY(65vh) scale(1.1);}
-  85%{transform:translateY(58vh) scale(0.9);}
-  100%{transform:translateY(62vh);}
-}
-
-/* POOF */
-.poof{
-  position:absolute;
-  bottom:160px;
-  font-size:28px;
-  opacity:0;
-  color:#f4d58d;
-  animation:poof 2s ease forwards;
-}
-
-@keyframes poof{
-  0%,70%{opacity:0;}
-  80%{opacity:1; transform:scale(1.2);}
-  100%{opacity:0; transform:scale(1.5);}
-}
-
 
 .lock{
-  max-width:500px;
-  margin:auto;
+  width:100%;
+  max-width:480px;
   padding:40px;
   border-radius:20px;
   background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.lock h2{
+  font-family:'Fraunces',serif;
+  font-size:26px;
+  margin-bottom:14px;
 }
 
 .lock input{
   width:100%;
-  padding:12px;
+  padding:12px 16px;
   margin:10px 0;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.15);
+  background:rgba(255,255,255,0.06);
+  color:#f6f1e8;
+  font-family:'Manrope',sans-serif;
+  font-size:15px;
+  outline:none;
+  transition:border-color 0.3s;
+}
+.lock input:focus{ border-color:rgba(236,72,153,0.5); }
+.lock input::placeholder{ color:rgba(255,255,255,0.3); }
+
+#passMsg{
+  min-height:20px;
+  font-size:14px;
+  color:#ec4899;
+  margin:6px 0;
 }
 
 .note{
   display:none;
-  margin-top:20px;
-  color:black;
-  padding:20px;
-  border-radius:15px;
+  margin-top:24px;
+}
+
+/* THE MAIN FIX — image responsive and centered */
+.note img{
+  width:100%;
+  max-width:380px;
+  height:auto;
+  display:block;
+  margin:0 auto;
+  border-radius:12px;
   transform:rotate(-1deg);
-  
+}
+
+/* ==============================
+   RESPONSIVE BREAKPOINTS
+   ============================== */
+@media(max-width:768px){
+  .message-box{ padding:70px 16px; }
+  .card        { padding:34px 24px; }
+  .stats       { padding:70px 16px; }
+  .final       { padding:70px 16px; }
+  .secret      { padding:60px 16px; }
+  .lock        { padding:30px 20px; }
+}
+
+@media(max-width:480px){
+  /* intro */
+  .blob img       { width:68px; }
+  .landing-circle { width:78px; height:78px; }
+  .poof           { font-size:18px; bottom:calc(14% + 68px); }
+
+  /* hero */
+  .hero h1{ font-size:36px; }
+
+  /* letter */
+  .card   { padding:24px 16px; border-radius:18px; }
+  .card h2{ font-size:22px; }
+
+  /* stats — 2 columns on mobile */
+  .grid { grid-template-columns:repeat(2,1fr); gap:12px; }
+  .box  { padding:26px 14px; }
+  .box h1{ font-size:32px; }
+
+  /* final */
+  .final h2{ font-size:28px; }
+
+  /* lock */
+  .lock   { padding:24px 16px; }
+  .lock h2{ font-size:20px; }
 }
