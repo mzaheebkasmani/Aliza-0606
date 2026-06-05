@@ -1,7 +1,8 @@
 // OPEN LETTER BUTTON
 document.getElementById("btn").addEventListener("click", () => {
   document.getElementById("letterSection").scrollIntoView({
-    behavior: "smooth"
+    behavior: "smooth" ,
+    block: "center"
     
     
   });
