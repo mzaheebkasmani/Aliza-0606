@@ -18,12 +18,13 @@ body {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;      /* Purane browsers ke liye */
-  height: 100lvh;     /* Mobile par scroll karte waqt height lock karne ke liye */
+  height: 100vh;      /* Normal browsers ke liye fallback */
+  height: 100svh;     /* Mobile par zoom/scroll issue rokne ke liye */
   background: url("./A.jpg") center/cover no-repeat;
   opacity: 0.25;
   z-index: -3;
-  transform: translateZ(0); /* Scroll ko bilkul smooth rakhne ke liye */
+}
+
 }
 
 }
