@@ -432,3 +432,95 @@ button:hover {
     transform: translateY(8px) rotate(45deg); /* 8px neechay jayega */
   }
 }
+
+/* ==============================
+   NEW STYLISH FONTS OVERRIDE
+   ============================== */
+
+/* Normal Text (Cute & Modern) */
+body, button, input, p {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+/* Headings (Elegant & Premium) */
+h1, h2, .box h1 {
+  font-family: 'Playfair Display', serif !important;
+  letter-spacing: 1px;
+}
+
+/* Stylish Cursive Script (Handwritten Feel) */
+.hero h1 span, .final h2 span, .last, .card h2 {
+  font-family: 'Dancing Script', cursive !important;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+/* Naam ko thoda bada aur prominent karne ke liye */
+.hero h1 span, .final h2 span {
+  font-size: 1.3em; 
+  margin-top: 10px;
+}
+
+/* Letter ki aakhri line ko pyara look dene ke liye */
+.last {
+  font-size: 32px !important;
+  margin-top: 25px !important;
+}
+
+/* ==============================
+   SPECIAL QUOTES STYLE (HERO & FINAL PARAGRAPHS)
+   ============================== */
+.hero p, .final p {
+  font-family: 'Playfair Display', serif !important;
+  font-style: normal !important; /* Italic hata diya, ab text seedha likha aayega */
+  font-size: clamp(16px, 3vw, 20px) !important; /* Thoda bada aur wazeh kiya */
+  color: #e8ded1 !important; /* Aesthetic off-white color */
+  line-height: 2 !important; /* Lines ke darmiyan khula fasla */
+  max-width: 700px;
+  margin: 30px auto !important;
+  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.1); /* Halka sa chamak */
+  letter-spacing: 0.5px;
+}
+
+/* ==============================
+   STYLISH OPEN LETTER BUTTON
+   ============================== */
+#btn {
+  margin-top: 20px;
+  padding: 16px 45px;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #fff;
+  
+  /* Glassmorphism aur gradient effect */
+  background: linear-gradient(45deg, rgba(236, 72, 153, 0.15), rgba(139, 92, 246, 0.15));
+  border: 1px solid rgba(236, 72, 153, 0.5);
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  
+  /* Halka sa pink glow */
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.2);
+  transition: all 0.4s ease;
+  
+  /* Dhadakne (Pulse) wali animation */
+  animation: pulseBtn 2s infinite;
+}
+
+/* Jab mouse upar jaye (Hover effect) */
+#btn:hover {
+  transform: translateY(-5px) scale(1.05); /* Thoda hawa mein uthega aur bada hoga */
+  background: linear-gradient(45deg, rgba(236, 72, 153, 0.4), rgba(139, 92, 246, 0.4));
+  box-shadow: 0 10px 30px rgba(236, 72, 153, 0.6); /* Glow zyada ho jayega */
+  border-color: rgba(255, 255, 255, 0.8);
+  color: #f4d58d; /* Text golden ho jayega */
+}
+
+/* Pulse Animation (Aese lagega jese button zinda hai aur invite kar raha hai click karne ko) */
+@keyframes pulseBtn {
+  0%   { box-shadow: 0 0 0 0 rgba(236, 72, 153, 0.4); }
+  70%  { box-shadow: 0 0 0 15px rgba(236, 72, 153, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(236, 72, 153, 0); }
+}
