@@ -624,3 +624,12 @@ h1, h2, .box h1 {
   font-style: italic;
 }
 
+@media(max-width: 480px) {
+  .message-box {
+    padding-top: 50px !important;
+    padding-bottom: 20px !important; /* Neechay ka gap kam kar diya */
+  }
+  .scroll-indicator {
+    margin-top: 10px !important; /* Scroll text ko card ke thoda qareeb kar diya */
+  }
+}
