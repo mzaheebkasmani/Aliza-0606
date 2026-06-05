@@ -524,3 +524,102 @@ h1, h2, .box h1 {
   70%  { box-shadow: 0 0 0 15px rgba(236, 72, 153, 0); }
   100% { box-shadow: 0 0 0 0 rgba(236, 72, 153, 0); }
 }
+
+/* ==============================
+   PREMIUM VIP PASSWORD BOX
+   ============================== */
+
+/* Main Box ka VIP Design */
+.lock {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(236, 72, 153, 0.2) !important;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3), 0 0 25px rgba(236, 72, 153, 0.1) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-radius: 25px !important;
+  padding: 50px 30px !important;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Box ke upar ek pyari si chamakti hui line (Top Border Glow) */
+.lock::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #ec4899, #8b5cf6, transparent);
+}
+
+/* "Private Note 📝" Text ka style */
+.lock h2 {
+  font-family: 'Playfair Display', serif !important;
+  color: #f4d58d !important;
+  font-size: 28px !important;
+  margin-bottom: 25px !important;
+  letter-spacing: 1px;
+}
+
+/* Password Likhne wali jagah (Stylish Input) */
+.lock input {
+  width: 100% !important;
+  padding: 16px 20px !important;
+  border-radius: 15px !important;
+  background: rgba(0, 0, 0, 0.3) !important; /* Thoda dark background */
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #fff !important;
+  font-size: 18px !important;
+  text-align: center; /* Password beech mein type hoga */
+  letter-spacing: 8px; /* Dots ke darmiyan VIP gap */
+  transition: all 0.3s ease !important;
+  box-shadow: inset 0 2px 8px rgba(0,0,0,0.4);
+}
+
+/* Jab input pe click karein toh pink glow aaye */
+.lock input:focus {
+  border-color: #ec4899 !important;
+  box-shadow: 0 0 15px rgba(236, 72, 153, 0.4), inset 0 2px 5px rgba(0,0,0,0.4) !important;
+  background: rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Placeholder ka space normal rakhne ke liye */
+.lock input::placeholder {
+  letter-spacing: 1px !important;
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Magical UNLOCK Button */
+.lock button {
+  margin-top: 25px !important;
+  padding: 16px !important;
+  border-radius: 15px !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(45deg, #ec4899, #8b5cf6) !important; /* Pink to Purple gradient */
+  border: none !important;
+  color: white !important;
+  box-shadow: 0 5px 15px rgba(236, 72, 153, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Button ke Hover pe glow aur uthna */
+.lock button:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 8px 25px rgba(236, 72, 153, 0.6) !important;
+  filter: brightness(1.1);
+}
+
+/* PASSWORD HINT STYLE */
+.hint {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 13px !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+  margin-bottom: 15px !important;
+  letter-spacing: 1px;
+  font-style: italic;
+}
