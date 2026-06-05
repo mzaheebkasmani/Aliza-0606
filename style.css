@@ -15,36 +15,31 @@ body {
 /* BESTIE BACKGROUND */
 .bestiepic {
   position: fixed;
-  top: -5%; /* Image thodi badi ki hai taake scroll karne par size jump na kare */
-  left: -5%;
-  width: 110vw;
-  height: 110vh;
+  inset: 0;
   background: url("./A.jpg") center/cover no-repeat;
   opacity: 0.25;
   z-index: -3;
 }
 
-/* GLOW WALA HISA (BUG FIX) */
+/* GLOW */
 .glow {
   position: fixed;
   border-radius: 50%;
+  filter: blur(100px);
   z-index: -2;
-  pointer-events: none; /* Taake yeh clicks ko block na kare */
 }
-
-/* Blur hata kar gradient laga diya hai jo same effect dega aur kabhie glitch nahi hoga */
 .glow1 {
-  width: 600px; height: 600px;
-  background: radial-gradient(circle, rgba(139,92,246,0.25) 0%, rgba(139,92,246,0) 70%);
-  top: -150px; left: -150px;
+  width: 400px; height: 400px;
+  background: rgba(139,92,246,0.3);
+  top: -100px; left: -100px;
 }
-
 .glow2 {
-  width: 600px; height: 600px;
-  background: radial-gradient(circle, rgba(236,72,153,0.2) 0%, rgba(236,72,153,0) 70%);
-  bottom: -150px; right: -150px;
+  width: 350px; height: 350px;
+  background: rgba(236,72,153,0.25);
+  bottom: -100px; right: -100px;
 }
 
+/* ==============================
    INTRO — fixed & responsive
    ============================== */
 .intro {
