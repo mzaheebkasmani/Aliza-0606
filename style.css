@@ -326,3 +326,109 @@ button:hover {
   .lock   { padding: 24px 16px; }
   .lock h2 { font-size: 20px; }
 }
+
+/* ==============================
+   STYLISH DATE BADGE
+   ============================== */
+.stylish-date {
+  position: absolute;
+  top: 8vh; /* Upar wale khali hissay mein perfect fit karne ke liye */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 24px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  animation: floatDate 4s ease-in-out infinite;
+  z-index: 10;
+}
+
+/* Date ka Text Style */
+.stylish-date p {
+  margin: 0;
+  font-family: 'Manrope', sans-serif;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+  letter-spacing: 4px; /* Text ke darmiyan khubsurat fasla */
+  text-transform: uppercase;
+}
+
+/* "12 October" ko special highlight karne ke liye */
+.stylish-date p span {
+  color: #f4d58d; /* Golden color jo aapne "POOF" mein use kiya */
+  font-family: 'Fraunces', serif;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+/* Pink Glowing Dot */
+.glowing-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #ec4899;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #ec4899, 0 0 20px #ec4899;
+  animation: pulseDot 2s infinite;
+}
+
+/* Floating Animation (Hawa mein tairne ke liye) */
+@keyframes floatDate {
+  0%, 100% { transform: translate(-50%, 0px); }
+  50%      { transform: translate(-50%, -8px); }
+}
+
+/* Dot ki chamak kam-zyada hone ki animation */
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.5; transform: scale(1.2); }
+}
+
+/* ==============================
+   SCROLL DOWN INDICATOR
+   ============================== */
+.scroll-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto 40px auto; /* Sections ke darmiyan fasla set karne ke liye */
+  opacity: 0.7; /* Thoda transparent taake background mein mix lage */
+}
+
+/* "SCROLL" Text ka style */
+.scroll-indicator span {
+  font-family: 'Manrope', sans-serif;
+  font-size: 11px;
+  letter-spacing: 5px; /* Text ke darmiyan aesthetic gap */
+  text-transform: uppercase;
+  color: #f4d58d; /* "POOF" wala golden color */
+  margin-bottom: 8px;
+}
+
+/* Neechay ki taraf point karta hua Arrow */
+.scroll-indicator .arrow {
+  width: 12px;
+  height: 12px;
+  border-right: 2px solid #ec4899; /* Pink color ki line */
+  border-bottom: 2px solid #ec4899;
+  transform: rotate(45deg); /* Line ko ghuma kar arrow banaya */
+  animation: bounceArrow 2s infinite ease-in-out;
+}
+
+/* Arrow ke upar neechay (bouncing) hone ki animation */
+@keyframes bounceArrow {
+  0%, 100% {
+    transform: translateY(0) rotate(45deg);
+  }
+  50% {
+    transform: translateY(8px) rotate(45deg); /* 8px neechay jayega */
+  }
+}
