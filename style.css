@@ -15,10 +15,17 @@ body {
 /* BESTIE BACKGROUND */
 .bestiepic {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;      /* Purane browsers ke liye */
+  height: 100lvh;     /* Mobile par scroll karte waqt height lock karne ke liye */
   background: url("./A.jpg") center/cover no-repeat;
   opacity: 0.25;
   z-index: -3;
+  transform: translateZ(0); /* Scroll ko bilkul smooth rakhne ke liye */
+}
+
 }
 
 /* GLOW */
